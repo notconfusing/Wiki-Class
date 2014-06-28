@@ -42,4 +42,7 @@ def score(text, language=languages.get('English')):
 	
 	# Calculate info noise
 	# 1.0 - len of filtered words/total words
-	return 1 - (len(stemmed_nonstops)/len(words))
+        if len(words) != 0:
+            return 1 - (len(stemmed_nonstops)/len(words))
+        else:
+            return 1
